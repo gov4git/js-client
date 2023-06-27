@@ -1,0 +1,62 @@
+{
+  "name": "@gov4git/js-client",
+  "version": "0.0.1",
+  "description": "JavaScript client for gov4git",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "gov4git": "./dist/bin.js",
+    "g4g": "./dist/bin.js"
+  },
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "postinstall": "archive-downloader",
+    "build:types": "tsc --emitDeclarationOnly --declaration",
+    "build:lib": "tsup",
+    "build": "run-p build:types build:lib"
+  },
+  "archive-downloader": {
+    "url": "https://github.com/gov4git/gov4git/releases/download/v{{version}}/gov4git_{{platform}}_{{arch}}{{platformExt}}",
+    "dest": "./bin",
+    "platform": {
+      "linux": "Linux",
+      "win32": "Windows"
+    },
+    "arch": {
+      "x64": "x86_64"
+    },
+    "variables": {
+      "version": "1.0.5"
+    }
+  },
+  "keywords": [
+    "gov4git"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "npm-run-all2": "^6.0.5",
+    "prettier": "^2.8.8",
+    "tsup": "^7.0.0",
+    "typescript": "^5.1.3"
+  },
+  "dependencies": {
+    "@d-dev/archive-downloader": "^0.1.0"
+  }
+}
