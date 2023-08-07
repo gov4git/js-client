@@ -1,6 +1,6 @@
 {
   "name": "@gov4git/js-client",
-  "version": "0.0.1",
+  "version": "1.0.6",
   "description": "JavaScript client for gov4git",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -25,7 +25,7 @@
     "package.json"
   ],
   "scripts": {
-    "postinstall": "archive-downloader",
+    "postinstall": "archive-downloader --no-skip",
     "build:types": "tsc --emitDeclarationOnly --declaration",
     "build:lib": "tsup",
     "build": "run-p build:types build:lib"
@@ -41,7 +41,7 @@
       "x64": "x86_64"
     },
     "variables": {
-      "version": "1.0.5"
+      "version": "1.0.6"
     }
   },
   "keywords": [
