@@ -7,4 +7,5 @@ export type BinReturn = B
 
 export const runGov4Git: (...args: string[]) => Promise<BinReturn> = wrapBin(
   resolve(__dirname, '../bin/gov4git'),
+  { maxBuffer: 1024 * 1024 * 1024 },
 )
