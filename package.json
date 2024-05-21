@@ -1,6 +1,6 @@
 {
   "name": "@gov4git/js-client",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "JavaScript client for gov4git",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -42,7 +42,7 @@
       "x64": "x86_64"
     },
     "variables": {
-      "version": "2.2.5"
+      "version": "2.2.6"
     }
   },
   "keywords": [
